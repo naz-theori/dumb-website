@@ -9,9 +9,11 @@
   const params = new URLSearchParams(window.location.search);
   const email = params.get("email");
   const password = params.get("password");
-  
-  window.localStorage.setItem("email", email);
-  window.localStorage.setItem("password", password);
+
+  if (email === "foo@example.com" && password == "bar") {
+    window.localStorage.setItem("email", email);
+    window.localStorage.setItem("password", password);
+  }
 
   window.location.href = "./";
 </script>
