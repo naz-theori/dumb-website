@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Dumb Website</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+<br />
+<p id="message"></p>
+<br />
+<form action="./login.html">
+<input type="email" name="email" placeholder="foo@example.com" />
+<input type="password" name="password" placeholder="password" />
+<input type="submit" value="submit" />
+</form>
+
+<p>
+Sitemap: <a href="./sitemap.json">./sitemap.json</a>
+</p>
+<p>There are no other pages on this site</p>
+
+<script>
+  const email = window.localStorage.getItem("email");
+  const password = window.localStorage.getItem("password");
+
+  const message = document.querySelector("#message");
+  if (email) {
+    message.innerText = `Hello ${email} / ${password}`;
+  } else {
+    message.innerText = "Please login";
+  }
+</script>
+</body>
+</html>
